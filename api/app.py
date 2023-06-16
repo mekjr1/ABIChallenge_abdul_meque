@@ -2,13 +2,15 @@ from flask import Flask, jsonify, request
 from sklearn.ensemble import RandomForestClassifier
 import json
 import numpy as np
+import os
 
 from passenger import Passenger
 from apix import RandomForestAPI
 
 app = Flask(__name__)
 
-api = RandomForestAPI('/home/mekjr1/ABIChallenge_abdul_meque/random_forest_model.pkl')
+
+api = RandomForestAPI('random_forest_model.pkl')
 
 class PassengerEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -71,6 +73,7 @@ def predict():
 
     return jsonify(response)
 
+port = int(os.environ.get('PORT', 5000))
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    app.run(debug=True, host='0.0.0.0', port=port)
