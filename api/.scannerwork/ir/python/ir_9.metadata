@@ -1,0 +1,7 @@
+app.PassengerEncoder.default
+super
+super.__init__
+int
+int.__init__
+==
+default

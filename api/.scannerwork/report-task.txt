@@ -1,0 +1,7 @@
+organization=mekjr1
+projectKey=mekjr1_ABIChallenge_abdul_meque
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.42767
+dashboardUrl=https://sonarcloud.io/dashboard?id=mekjr1_ABIChallenge_abdul_meque
+ceTaskId=AYjO9C3VjlkHUqiW1ChW
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AYjO9C3VjlkHUqiW1ChW
