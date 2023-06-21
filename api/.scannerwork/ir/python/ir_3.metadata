@@ -1,4 +1,3 @@
-apix.RandomForestAPI.predict_batch
+tests.FlaskAppTests.test_predict_single
 ==
-tolist
-predict
+assertEqual

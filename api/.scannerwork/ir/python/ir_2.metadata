@@ -1,4 +1,4 @@
-apix.RandomForestAPI.predict_single
+tests.FlaskAppTests.test_get_predictions
 ==
-preprocess_data
-predict
+get
+assertEqual

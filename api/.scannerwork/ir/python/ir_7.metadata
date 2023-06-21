@@ -1,3 +1,4 @@
-tests.FlaskAppTests.test_predict_single
+model.RandomForestAPI.predict_single
 ==
-assertEqual
+predict
+get_features

@@ -1,5 +1,7 @@
-tests.FlaskAppTests.test_test_route
+app.PassengerEncoder.default
+super
+super.__init__
+int
+int.__init__
 ==
-get
-assertEqual
-get_json
+default

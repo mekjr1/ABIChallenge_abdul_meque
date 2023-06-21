@@ -1,11 +1,4 @@
-ï
-apix.RandomForestAPI)
-__init__apix.RandomForestAPI.__init__-
-
-load_modelapix.RandomForestAPI.load_model3
-predict_batch"apix.RandomForestAPI.predict_batch5
-predict_single#apix.RandomForestAPI.predict_single7
-preprocess_data$apix.RandomForestAPI.preprocess_data…
+…
 tests.FlaskAppTests"
 setUptests.FlaskAppTests.setUp@
 test_get_predictions(tests.FlaskAppTests.test_get_predictions<
