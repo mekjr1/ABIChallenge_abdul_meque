@@ -1,0 +1,4 @@
+tests.FlaskAppTests.test_get_predictions
+==
+get
+assertEqual

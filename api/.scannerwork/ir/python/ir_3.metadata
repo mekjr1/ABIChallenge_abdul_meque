@@ -1,0 +1,3 @@
+tests.FlaskAppTests.test_predict_single
+==
+assertEqual

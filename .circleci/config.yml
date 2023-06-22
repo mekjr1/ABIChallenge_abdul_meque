@@ -1,0 +1,23 @@
+
+
+jobs:
+  build:
+    docker:
+      - image: 'docker pull circleci/python'
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies and build project
+          command: |
+            pip install --upgrade pip
+            pip install -r requirements.txt
+      - sonarcloud/scan
+
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.3
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud

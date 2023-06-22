@@ -1,0 +1,13 @@
+Flask==2.3.2
+Flask-Migrate==4.0.4
+Flask-SQLAlchemy==3.0.3
+numpy==1.24.3
+pandas==2.0.2
+regex==2023.6.3
+requests==2.31.0
+scikit-learn==1.2.2
+scipy==1.10.1
+sklearn==0.0.post5
+SQLAlchemy==2.0.16
+
+

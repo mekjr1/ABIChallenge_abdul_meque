@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+    <title>Flask API Test</title>
+</head>
+<body>
+    <h1>Flask API Test</h1>
+    <form id="prediction-form">
+        <label for="pclass">Pclass:</label>
+        <input type="text" id="pclass" name="pclass" required><br><br>
+        
+        <label for="sex">Sex:</label>
+        <input type="text" id="sex" name="sex" required><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required><br><br>
+        
+        <label for="fare">Fare:</label>
+        <input type="text" id="fare" name="fare" required><br><br>
+        
+        <label for="embarked">Embarked:</label>
+        <input type="text" id="embarked" name="embarked" required><br><br>
+        
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+        
+        <label for="isAlone">Is Alone:</label>
+        <input type="text" id="isAlone" name="isAlone" required><br><br>
+        
+        <label for="ageClass">Age Class:</label>
+        <input type="text" id="ageClass" name="ageClass" required><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+    
+    <div id="result"></div>
+    
+    <script>
+        document.getElementById("prediction-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            var form = document.getElementById("prediction-form");
+            var data = {
+                "pclass": form.elements["pclass"].value,
+                "sex": form.elements["sex"].value,
+                "age": form.elements["age"].value,
+                "fare": form.elements["fare"].value,
+                "embarked": form.elements["embarked"].value,
+                "title": form.elements["title"].value,
+                "isAlone": form.elements["isAlone"].value,
+                "ageClass": form.elements["ageClass"].value
+            };
+            
+            fetch("/predict", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                document.getElementById("result").innerHTML = "Prediction: " + data.prediction;
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+        });
+    </script>
+</body>
+</html>
