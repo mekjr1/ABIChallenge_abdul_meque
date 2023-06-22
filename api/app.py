@@ -1,5 +1,5 @@
 # app.py
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from model import RandomForestAPI
 from database import Prediction, db
@@ -25,9 +25,10 @@ class PassengerEncoder(json.JSONEncoder):
             return int(obj)  # Convert int64 to int
         return super().default(obj)
     
+
 @app.route('/', methods=['GET'])
-def test():
-    return jsonify({'message': 'It works! Now you have to call the right endpoint'})
+def index():
+    return render_template('index.html')
 
 @app.route('/predictions', methods=['GET'])
 def get_predictions():
